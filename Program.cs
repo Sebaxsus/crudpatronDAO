@@ -290,8 +290,11 @@ namespace CrudDAOWay
         private static string InputFechaEjecucion()
         {
             DateTime Fecha = DateTime.Now;
-            string FormatoFechaSql = Fecha.ToString("u");
-            return FormatoFechaSql.Remove(FormatoFechaSql.Length-1);
+            //string FormatoFechaSql = Fecha.ToString("u");
+            //string FormatoFechaSql = Fecha.ToString("yyyy-MM-dd hh-mm-ss tt");
+            //return FormatoFechaSql.Remove(FormatoFechaSql.Length-1);
+            string FormatoFechaSql = Fecha.ToString("yyyy-MM-dd HH:mm:ss");
+            return FormatoFechaSql;
         }
     }
 }

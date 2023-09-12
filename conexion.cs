@@ -10,7 +10,7 @@ namespace CrudDAOWay
     {
         //"server=localhost;user=MinTic;password=JsgrMc1;database=estudiantes;"
         //"server=localhost;user=root;password=;database=sampledb;"
-        private static readonly string ConnectionString = "server=localhost;user=MinTic;password=JsgrMc1;database=estudiantes";
+        private static readonly string ConnectionString = "server=localhost;user=root;password=;database=sampledb;";
         private MySqlConnection _connection;
 
         //Se implementa el patrón Singleton utilizando la propiedad estática Instance para garantizar

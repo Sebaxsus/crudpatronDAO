@@ -8,7 +8,7 @@ namespace CrudDAOWay
 {
     public class EmpleadoDaoImpl : IEmpleadoDao
     {
-        private const string INSERT_QUERY = "INSERT INTO estudiantes (nombre, apellido, edad, nota_1, nota_2, log) VALUES (@nombre, @apellido, @edad, @nota_1, @nota_2, log)";
+        private const string INSERT_QUERY = "INSERT INTO estudiantes (nombre, apellido, edad, nota_1, nota_2, log) VALUES (@nombre, @apellido, @edad, @nota_1, @nota_2, @log)";
         private const string SELECT_ALL_QUERY = "SELECT * FROM estudiantes ORDER BY ID";
         private const string UPDATE_QUERY = "UPDATE estudiantes SET nombre=@nombre, apellido=@apellido, edad=@edad, nota_1=@nota_1, nota_2=@nota_2, log=@log WHERE ID=@id";
         private const string DELETE_QUERY = "DELETE FROM estudiantes WHERE ID=@id";
@@ -222,7 +222,7 @@ namespace CrudDAOWay
             int edad = reader.GetInt32("edad");
             double nota_1 = reader.GetDouble("nota_1");
             double nota_2 = reader.GetDouble("nota_2");
-            string  log = reader.IsDBNull(reader.GetOrdinal("log")) ? "" : reader.GetString("log");
+            string  log = reader.GetString("log");//reader.IsDBNull(reader.GetOrdinal("log")) ? "" : 
             return new Empleado(id, nombre, apellido, edad, nota_1, nota_2, log);
         }
 
